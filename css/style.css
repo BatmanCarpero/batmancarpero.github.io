@@ -449,8 +449,23 @@ h2 .accent { color: var(--yellow); }
 .social-item:hover::after { transform: scaleX(1); }
 
 .social-icon {
-  font-size: 1.6rem;
+  width: 28px;
+  height: 28px;
   margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon img {
+  width: 28px;
+  height: 28px;
+  filter: invert(65%) sepia(8%) saturate(500%) hue-rotate(70deg) brightness(95%);
+  transition: filter 0.3s;
+}
+
+.social-item:hover .social-icon img {
+  filter: invert(80%) sepia(35%) saturate(600%) hue-rotate(10deg) brightness(100%);
 }
 
 .social-name {
@@ -554,14 +569,31 @@ footer a:hover { color: var(--yellow); }
   padding: 4rem 3rem 6rem;
 }
 
+.gallery-featured {
+  margin-bottom: 2rem;
+}
+
+.gallery-featured .video-card {
+  max-width: 100%;
+}
+
+.video-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--yellow);
+  color: var(--bg);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  z-index: 2;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
-}
-
-.gallery-grid .video-card:first-child {
-  grid-column: span 2;
 }
 
 .video-card {
@@ -646,20 +678,6 @@ footer a:hover { color: var(--yellow); }
 
 .video-card:hover .video-accent { opacity: 1; }
 
-.video-card:first-child .video-wrapper::after {
-  content: 'FEATURED';
-  position: absolute;
-  top: 12px; left: 12px;
-  background: var(--yellow);
-  color: var(--bg);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 2px;
-  z-index: 2;
-}
-
 .gallery-meta {
   display: flex;
   align-items: center;
@@ -694,10 +712,6 @@ footer a:hover { color: var(--yellow); }
 }
 .back-btn:hover { color: var(--green-acc); }
 
-@media (max-width: 900px) {
-  .gallery-grid .video-card:first-child { grid-column: span 1; }
-}
-
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   .hero {
@@ -713,6 +727,5 @@ footer a:hover { color: var(--yellow); }
   .page-header { padding: 7rem 1.5rem 3rem; }
   .gallery-section { padding: 3rem 1.5rem 4rem; }
   .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .gallery-grid .video-card:first-child { grid-column: span 1; }
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
