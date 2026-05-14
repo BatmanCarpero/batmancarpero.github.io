@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BatmanCarpero — Video Gallery</title>
-  <!-- Discord Embedding -->
+
   <meta property="og:title" content="BatmanCarpero — Video Gallery">
-  <meta property="og:description" content="A showcase of video samples from my projects and mods. Watch them below or check the links to the full releases.">
+  <meta property="og:description" content="A showcase of video samples from my projects and mods. Watch them below.">
   <meta property="og:url" content="https://batmancarpero.com/galeria/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://batmancarpero.com/imgs/carpero.jpg">
@@ -23,352 +23,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
-  <style>
-    :root {
-      --bg:        #0e1410;
-      --bg2:       #141a16;
-      --bg3:       #1c2420;
-      --green-dk:  #1f3d2a;
-      --green-mid: #2e5e3e;
-      --green-acc: #3d8c55;
-      --yellow:    #d4b96a;
-      --yellow-lt: #f0d484;
-      --gray-dk:   #2a2e2b;
-      --gray-mid:  #4a5249;
-      --gray-lt:   #8a9688;
-      --white:     #e8ede9;
-      --off-white: #c5cec6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.4;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 3rem;
-      background: rgba(14,20,16,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(61,140,85,0.15);
-    }
-
-    .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 0.12em;
-      color: var(--yellow);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--gray-lt);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.25s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: -4px;
-      width: 0; height: 1px;
-      background: var(--green-acc);
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a:hover::after { width: 100%; }
-    .nav-links a.active { color: var(--yellow); }
-
-    /* ── PAGE HEADER ── */
-    .page-header {
-      padding: 9rem 3rem 4rem;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(61,140,85,0.12);
-    }
-
-    .page-header-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 50% 80% at 80% 50%, rgba(31,61,42,0.4) 0%, transparent 70%),
-        radial-gradient(ellipse 30% 50% at 10% 80%, rgba(212,185,106,0.04) 0%, transparent 60%);
-    }
-
-    .page-header-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .page-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--green-acc);
-      margin-bottom: 1rem;
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .page-eyebrow a {
-      color: var(--gray-lt);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .page-eyebrow a:hover { color: var(--yellow); }
-
-    .page-eyebrow .sep { color: var(--gray-mid); }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      animation: fadeUp 0.7s 0.1s ease both;
-    }
-
-    h1 em {
-      font-style: normal;
-      color: var(--yellow);
-    }
-
-    .page-desc {
-      margin-top: 1.2rem;
-      max-width: 480px;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--gray-lt);
-      animation: fadeUp 0.7s 0.2s ease both;
-    }
-
-    /* ── GALLERY GRID ── */
-    .gallery-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 3rem 6rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 2rem;
-    }
-
-    /* Featured first item */
-    .gallery-grid .video-card:first-child {
-      grid-column: span 2;
-    }
-
-    .video-card {
-      background: var(--bg2);
-      border: 1px solid rgba(61,140,85,0.15);
-      border-radius: 4px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-      animation: fadeUp 0.6s ease both;
-    }
-
-    .video-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(61,140,85,0.45);
-      box-shadow: 0 20px 48px rgba(0,0,0,0.45);
-    }
-
-    .video-card:nth-child(1) { animation-delay: 0.1s; }
-    .video-card:nth-child(2) { animation-delay: 0.15s; }
-    .video-card:nth-child(3) { animation-delay: 0.2s; }
-    .video-card:nth-child(4) { animation-delay: 0.25s; }
-    .video-card:nth-child(5) { animation-delay: 0.3s; }
-    .video-card:nth-child(6) { animation-delay: 0.35s; }
-    .video-card:nth-child(7) { animation-delay: 0.4s; }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--bg3);
-      overflow: hidden;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* Loading state */
-    .video-wrapper::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--bg3) 0%, var(--green-dk) 100%);
-      z-index: 0;
-    }
-
-    .video-wrapper iframe { z-index: 1; }
-
-    .video-meta {
-      padding: 1.1rem 1.4rem 1.3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(61,140,85,0.1);
-    }
-
-    .video-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      color: var(--green-acc);
-    }
-
-    .video-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gray-mid);
-    }
-
-    .video-accent {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--yellow);
-      opacity: 0.6;
-      transition: opacity 0.3s;
-    }
-
-    .video-card:hover .video-accent { opacity: 1; }
-
-    /* ── TOP BAR on featured card ── */
-    .video-card:first-child .video-wrapper::after {
-      content: 'FEATURED';
-      position: absolute;
-      top: 12px; left: 12px;
-      background: var(--yellow);
-      color: var(--bg);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      padding: 0.2rem 0.6rem;
-      border-radius: 2px;
-      z-index: 2;
-    }
-
-    /* ── COUNT BAR ── */
-    .gallery-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 1px solid rgba(61,140,85,0.12);
-    }
-
-    .gallery-count {
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gray-lt);
-    }
-
-    .gallery-count strong {
-      color: var(--yellow);
-      font-weight: 500;
-    }
-
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-lt);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .back-btn:hover { color: var(--green-acc); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid rgba(61,140,85,0.15);
-      padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--gray-mid);
-    }
-
-    footer a { color: var(--green-acc); text-decoration: none; }
-    footer a:hover { color: var(--yellow); }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .gallery-grid .video-card:first-child { grid-column: span 1; }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .page-header { padding: 7rem 1.5rem 3rem; }
-      .gallery-section { padding: 3rem 1.5rem 4rem; }
-      .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .gallery-grid .video-card:first-child { grid-column: span 1; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="nav-logo" href="https://batmancarpero.com">BatmanCarpero</a>
     <ul class="nav-links">
@@ -379,7 +37,6 @@
     </ul>
   </nav>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-header-bg"></div>
     <div class="page-header-content">
@@ -389,11 +46,10 @@
         <span>Video Gallery</span>
       </div>
       <h1>Video <em>Gallery</em></h1>
-      <p class="page-desc">A showcase of video samples from my projects and mods. Watch them below or check the links to the full releases.</p>
+      <p class="page-desc">A showcase of video samples from my projects and mods. Watch them below.</p>
     </div>
   </div>
 
-  <!-- GALLERY -->
   <div class="gallery-section">
     <div class="gallery-meta">
       <span class="gallery-count"><strong>7</strong> videos in this gallery</span>
@@ -482,7 +138,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <span>© 2026 BatmanCarpero — All rights reserved</span>
     <span>
