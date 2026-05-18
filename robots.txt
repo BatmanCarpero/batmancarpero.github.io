@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /imgs/
 
-Sitemap: https://batmancarpero.com/sitemap.xml
+Sitemap: https://www.batmancarpero.com/sitemap.xml

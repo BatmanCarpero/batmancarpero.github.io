@@ -1,0 +1,4 @@
+# Redirect root domain to www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^batmancarpero\.com$ [NC]
+RewriteRule ^(.*)$ https://www.batmancarpero.com/$1 [L,R=301]
