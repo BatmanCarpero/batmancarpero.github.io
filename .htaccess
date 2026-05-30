@@ -1,4 +1,37 @@
-# Redirect root domain to www
 RewriteEngine On
+
 RewriteCond %{HTTP_HOST} ^batmancarpero\.com$ [NC]
 RewriteRule ^(.*)$ https://www.batmancarpero.com/$1 [L,R=301]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteRule ^gnome/? https://www.batmancarpero.com/ [L,R=302]
+
+Options -Indexes
+ServerSignature Off
+
+<FilesMatch "(^\.ht|^\.git|^\.env)">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css               "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType image/svg+xml          "access plus 1 year"
+  ExpiresByType image/x-icon           "access plus 1 year"
+  ExpiresDefault                       "access plus 1 week"
+</IfModule>
+

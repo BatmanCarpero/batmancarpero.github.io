@@ -31,7 +31,14 @@
 
   <div class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-line"></div>
+
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-orb hero-orb--3"></div>
+
+    <div class="hero-grid-lines"></div>
 
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="dot"></span> Available for work</div>
@@ -44,18 +51,28 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-card-tag">// Profile Card</div>
-        <h3>Carpero</h3>
-        <p>Coder, modder, creative. Obsessed with Friday Night Funkin' and custom content.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Developing</span>
-          <span class="skill-tag">Coding</span>
-          <span class="skill-tag">Game Modding</span>
-          <span class="skill-tag">Animation</span>
-          <span class="skill-tag">Design</span>
+      <div class="hero-stage">
+        <div class="hero-photo-aside">
+          <div class="hero-photo-frame">
+            <img src="/imgs/carpero.jpg" alt="BatmanCarpero" class="hero-photo">
+            <div class="hero-photo-overlay"></div>
+          </div>
+          <div class="hero-photo-deco hero-photo-deco--tl"></div>
         </div>
-        <div class="hero-card-deco"></div>
+
+        <div class="hero-card">
+          <div class="hero-card-tag">// Profile Card</div>
+          <h3>Carpero</h3>
+          <p>Coder, modder, creative. Developing mods since 2020.</p>
+          <div class="skills-list">
+            <span class="skill-tag">Developing</span>
+            <span class="skill-tag">Coding</span>
+            <span class="skill-tag">Game Modding</span>
+            <span class="skill-tag">Animation</span>
+            <span class="skill-tag">Design</span>
+          </div>
+          <div class="hero-card-deco"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -200,5 +217,7 @@
   <div id="footer-root"></div>
 
   <script src="/js/components.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script src="/js/hero.js"></script>
 </body>
 </html>
