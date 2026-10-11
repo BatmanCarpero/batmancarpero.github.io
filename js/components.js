@@ -1,5 +1,5 @@
 (function () {
-  var BASE = "https://www.batmancarpero.com";
+  var BASE = "";
   var COMPONENTS = "/components/";
 
   function setActiveLink(container) {

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BatmanCarpero</title>
 
-  <meta name="description" content="Welcome to my portfolio! I'm a passionate developer and modder. Explore my projects, check out my video gallery, and feel free to reach out for collaborations or inquiries.">
+  <meta name="description" content="Portfolio of BatmanCarpero, a game developer working with Unreal Engine and GameMaker. Featured projects, published mods and gameplay footage.">
   <meta property="og:title" content="BatmanCarpero">
-  <meta property="og:description" content="Welcome to my portfolio! I'm a passionate developer and modder. Explore my projects, check out my video gallery, and feel free to reach out for collaborations or inquiries.">
+  <meta property="og:description" content="Portfolio of BatmanCarpero, a game developer working with Unreal Engine and GameMaker. Featured projects, published mods and gameplay footage.">
   <meta property="og:url" content="https://www.batmancarpero.com">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.batmancarpero.com/imgs/carpero.jpg">
@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#06402B">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BatmanCarpero">
-  <meta name="twitter:description" content="Welcome to my portfolio! I'm a passionate developer and modder. Explore my projects, check out my video gallery, and feel free to reach out for collaborations or inquiries.">
+  <meta name="twitter:description" content="Portfolio of BatmanCarpero, a game developer working with Unreal Engine and GameMaker. Featured projects, published mods and gameplay footage.">
   <meta name="twitter:image" content="https://www.batmancarpero.com/imgs/carpero.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,10 +43,10 @@
     <div class="hero-content">
       <div class="hero-eyebrow"><span class="dot"></span> Available for work</div>
       <h1>Batman<em>Carpero</em></h1>
-      <p class="hero-desc">A developer &amp; modder who loves coding, creating mods, and building things that feel alive.</p>
+      <p class="hero-desc">Game developer working with Unreal Engine and GameMaker. Gameplay programming, custom tools and years of released mods.</p>
       <div class="hero-ctas">
-        <a href="#mods" class="btn btn-primary">View my Work</a>
-        <a href="/gallery/" class="btn btn-outline">Video Gallery</a>
+        <a href="#projects" class="btn btn-primary">View my Work</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
       </div>
     </div>
 
@@ -63,9 +63,9 @@
         <div class="hero-card">
           <div class="hero-card-tag">// Profile Card</div>
           <h3>Carpero</h3>
-          <p>Coder, modder, creative. Developing mods since 2020.</p>
+          <p>Coding since 2016. Game developer, modder and creative.</p>
           <div class="skills-list">
-            <span class="skill-tag">Developing</span>
+            <span class="skill-tag">Game Development</span>
             <span class="skill-tag">Coding</span>
             <span class="skill-tag">Game Modding</span>
             <span class="skill-tag">Animation</span>
@@ -80,21 +80,86 @@
   <div class="divider"></div>
 
   <section id="about">
-    <div class="section-label">01 — About me</div>
-    <h2>Just a dude who<br><span class="accent">loves coding</span></h2>
-    <p style="max-width:580px; line-height:1.8; color:var(--gray-lt); font-size:0.97rem;">
-      Hey! I'm BatmanCarpero — a normal guy with a passion for programming and game modding. I've worked on multiple game mods and I'm always cooking up something new. If you're looking for someone to collaborate with or hire, you're in the right place.
-    </p>
-    <div style="margin-top:2rem;">
+    <div class="section-label">About</div>
+    <h2>Game developer,<br><span class="accent">modder &amp; coder</span></h2>
+    <div class="about-text">
+      <p>I'm a game developer. I started writing code in 2016, and most of my public work so far is in game modding, where I've taken projects from first prototype to public release: code, content integration and final packaging.</p>
+      <p>Today I build full games in Unreal Engine (Blueprints) and GameMaker, with a focus on gameplay systems, interface, audio and getting a project to a finished, playable state. I also take on commissions for custom mods and game-related coding.</p>
+    </div>
+    <ul class="about-creds">
+      <li><span>Higher Technician</span> Cross-Platform Application Development (DAM)</li>
+      <li><span>Technician</span> Microcomputer Systems and Networks (SMIX)</li>
+    </ul>
+    <div class="about-actions">
       <a href="https://www.fiverr.com/batmancarpero" target="_blank" rel="noopener" class="btn btn-primary">Hire me on Fiverr</a>
+      <a href="#contact" class="btn btn-outline">Contact</a>
     </div>
   </section>
 
   <div class="divider"></div>
 
+  <section id="projects">
+    <div class="section-label">Projects</div>
+    <h2>Featured<br><span class="accent">projects</span></h2>
+    <p class="section-intro">Complete games built end to end. Gameplay footage and screenshots are in the <a href="/gallery/">gallery</a>.</p>
+
+    <article class="project" id="apagon">
+      <a class="project-media" href="/gallery/#apagon">
+        <img src="/imgs/apagon-hallway.jpg" alt="Apagon: school hallway leading to a bright exit" loading="lazy">
+      </a>
+      <div class="project-body">
+        <div class="project-meta">Unreal Engine 5.8 · Blueprints · 2026</div>
+        <h3>Apagon</h3>
+        <p>A short first-person horror game set in a school hallway after a power cut. The player has to cover 500 metres to the exit while hiding in lockers from two entities that appear without warning. Packaged as a Windows Shipping build.</p>
+        <ul class="project-points">
+          <li>Step-based movement with stamina, camera bob and footsteps synced to the bob cycle</li>
+          <li>Enemy AI written as state machines, with one active entity at a time</li>
+          <li>Endless-corridor illusion: a 500 m run inside an 80 m level</li>
+          <li>Lumen lighting, procedural floor wetness material, Niagara dust, Sequencer cinematics</li>
+          <li>Full UI: main menu, HUD, pause, game over, and saved records</li>
+        </ul>
+        <div class="project-tags">
+          <span class="skill-tag">Blueprints</span>
+          <span class="skill-tag">Lumen</span>
+          <span class="skill-tag">Niagara</span>
+          <span class="skill-tag">Sequencer</span>
+          <span class="skill-tag">UMG</span>
+        </div>
+        <a href="/gallery/#apagon" class="btn btn-outline">See gameplay</a>
+      </div>
+    </article>
+
+    <article class="project project--reverse" id="undersekai">
+      <a class="project-media project-media--pixel" href="/gallery/#undersekai">
+        <img src="/imgs/undersekai-cutscene-1.jpg" alt="UnderSekai cutscene" loading="lazy">
+      </a>
+      <div class="project-body">
+        <div class="project-meta">GameMaker · GML · 2026</div>
+        <h3>UnderSekai</h3>
+        <p>A story-driven fan game in the style of classic top-down RPGs, with exploration, turn-based combat, dialogue and cutscenes. It ships with online accounts: players log in and their save data is stored on a server. I handled all of the programming and part of the sprite work.</p>
+        <ul class="project-points">
+          <li>28 rooms, 70+ objects and a custom dialogue and event system</li>
+          <li>Turn-based battle system with its own menus and attack patterns</li>
+          <li>Account login and cloud saves through a web API</li>
+          <li>Mobile input support alongside keyboard</li>
+        </ul>
+        <div class="project-tags">
+          <span class="skill-tag">GameMaker</span>
+          <span class="skill-tag">GML</span>
+          <span class="skill-tag">Web API</span>
+          <span class="skill-tag">Git</span>
+        </div>
+        <a href="/gallery/#undersekai" class="btn btn-outline">See gameplay</a>
+      </div>
+    </article>
+  </section>
+
+  <div class="divider"></div>
+
   <section id="mods">
-    <div class="section-label">02 — Projects</div>
-    <h2>Projects I've<br><span class="accent">worked on</span></h2>
+    <div class="section-label">Mods</div>
+    <h2>Published<br><span class="accent">mods</span></h2>
+    <p class="section-intro">Mods for Friday Night Funkin' released publicly on GameBanana.</p>
 
     <div class="mods-grid">
 
@@ -176,8 +241,8 @@
   <div class="divider"></div>
 
   <section id="contact">
-    <div class="section-label">03 — Socials</div>
-    <h2>Find me<br><span class="accent">out there</span></h2>
+    <div class="section-label">Contact</div>
+    <h2>Get in<br><span class="accent">touch</span></h2>
 
     <div class="socials-grid">
 
