@@ -67,7 +67,7 @@ body {
 }
 
 .about-creds li span {
-  flex: 0 0 9rem;
+  flex: 0 0 12rem;
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1053,6 +1053,11 @@ footer a:hover {
   display: block;
 }
 
+.project-media--pixel {
+  aspect-ratio: 4 / 3;
+  background: #000;
+}
+
 .project-media--pixel img {
   image-rendering: pixelated;
 }
@@ -1164,6 +1169,7 @@ footer a:hover {
 }
 
 .shot-card.pixel img {
+  aspect-ratio: 4 / 3;
   image-rendering: pixelated;
 }
 
